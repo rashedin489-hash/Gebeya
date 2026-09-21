@@ -1,2 +1,5 @@
 # Gebeya
 Buying and selling here
+window.GEBEYA_SUPABASE_URL = "PASTE_PROJECT_URL";
+window.GEBEYA_SUPABASE_KEY = "PASTE_ANON_OR_PUBLISHABLE_KEY";
+window.GEBEYA_CREATOR_CODE = "5150";
