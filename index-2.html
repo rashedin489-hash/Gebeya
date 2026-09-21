@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b6e4f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<title>Gebeya ገበያ</title>
+<style>
+:root{
+  --pri:#0b6e4f; --pri2:#0f8a63; --acc:#f4a300; --red:#d64545;
+  --bg:#f5f7f4; --card:#ffffff; --txt:#15201b; --mut:#66756d; --line:#e2e8e3; --chip:#e8efe9;
+  --shadow:0 2px 10px rgba(10,40,25,.08);
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0d1512;--card:#16211c;--txt:#e9f1ec;--mut:#8fa197;--line:#243029;--chip:#1e2b25;--shadow:0 2px 10px rgba(0,0,0,.4);}
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;margin:0}
+body{font-family:system-ui,-apple-system,"Segoe UI","Noto Sans Ethiopic","Abyssinica SIL",Roboto,sans-serif;background:var(--bg);color:var(--txt);font-size:16px;line-height:1.4;overscroll-behavior:none}
+#app{height:100%;display:flex;flex-direction:column;max-width:640px;margin:0 auto;position:relative;background:var(--bg)}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+input,select,textarea{font:inherit;color:var(--txt);width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--pri2)}
+textarea{min-height:90px;resize:vertical}
+label{display:block;font-size:13px;font-weight:600;color:var(--mut);margin:14px 0 6px}
+header{display:flex;align-items:center;justify-content:space-between;padding:calc(env(safe-area-inset-top,0px) + 10px) 16px 10px;background:var(--pri);color:#fff}
+header .logo{font-weight:800;font-size:20px;letter-spacing:.2px}
+header .logo small{font-weight:500;opacity:.85;font-size:13px;margin-left:6px}
+.pill{font-size:12px;font-weight:700;padding:4px 10px;border-radius:99px;background:rgba(255,255,255,.2)}
+.pill.off{background:var(--acc);color:#3a2600}
+main{flex:1;overflow-y:auto;padding:12px 14px 90px;-webkit-overflow-scrolling:touch}
+nav{position:absolute;left:0;right:0;bottom:0;display:flex;background:var(--card);border-top:1px solid var(--line);padding:6px 4px calc(env(safe-area-inset-bottom,0px) + 6px);z-index:5}
+nav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;font-weight:600;color:var(--mut);padding:4px 0}
+nav button svg{width:24px;height:24px}
+nav button.on{color:var(--pri2)}
+nav button.post .plus{width:46px;height:46px;border-radius:50%;background:var(--acc);color:#3a2600;display:grid;place-items:center;margin-top:-20px;box-shadow:var(--shadow)}
+nav button.post .plus svg{width:26px;height:26px}
+.banner{background:#fff3d6;color:#5b3e00;border-radius:12px;padding:10px 12px;font-size:13px;margin-bottom:10px}
+.search{position:relative;margin-bottom:10px}
+.search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--mut)}
+.search input{padding-left:40px;border-radius:99px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:8px 14px;border-radius:99px;background:var(--chip);font-size:14px;font-weight:600;white-space:nowrap}
+.chip.on{background:var(--pri);color:#fff}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.card{background:var(--card);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);position:relative;cursor:pointer}
+.thumb{aspect-ratio:1/1;background:var(--chip);display:grid;place-items:center;font-size:54px;overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.cb{padding:9px 10px 11px}
+.price{font-weight:800;color:var(--pri2);font-size:15px}
+.title{font-size:14px;font-weight:600;margin:2px 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.meta{font-size:12px;color:var(--mut)}
+.tag{position:absolute;top:8px;left:8px;font-size:11px;font-weight:700;padding:3px 8px;border-radius:99px;background:rgba(0,0,0,.6);color:#fff}
+.tag.sold{background:var(--red)}
+.empty{text-align:center;color:var(--mut);padding:50px 20px}
+.empty .big{font-size:46px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 18px;border-radius:12px;font-weight:700;background:var(--pri);color:#fff;width:100%}
+.btn.sec{background:var(--chip);color:var(--txt)}
+.btn.acc{background:var(--acc);color:#3a2600}
+.btn.red{background:#fde8e8;color:var(--red)}
+.btn svg{width:20px;height:20px}
+.row{display:flex;gap:10px}
+.row>*{flex:1}
+h2{margin:6px 0 4px;font-size:20px}
+.sub{color:var(--mut);font-size:14px;margin:0 0 6px}
+.box{background:var(--card);border-radius:14px;padding:14px;box-shadow:var(--shadow);margin-bottom:12px}
+.box h3{margin:0 0 6px;font-size:16px}
+.photos{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.ph{width:78px;height:78px;border-radius:12px;background:var(--chip);position:relative;overflow:hidden;display:grid;place-items:center;font-size:26px;color:var(--mut)}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph .x{position:absolute;top:2px;right:2px;width:22px;height:22px;border-radius:50%;background:rgba(0,0,0,.65);color:#fff;font-size:14px;line-height:22px;text-align:center}
+.seg{display:flex;background:var(--chip);border-radius:12px;padding:3px;gap:3px}
+.seg button{flex:1;padding:9px;border-radius:10px;font-weight:600;font-size:14px}
+.seg button.on{background:var(--pri);color:#fff}
+/* detail sheet */
+.sheet{position:absolute;inset:0;background:var(--bg);z-index:20;overflow-y:auto;padding-bottom:30px}
+.sheet .top{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;padding:calc(env(safe-area-inset-top,0px) + 10px) 12px 10px;background:linear-gradient(var(--bg),transparent)}
+.round{width:40px;height:40px;border-radius:50%;background:var(--card);box-shadow:var(--shadow);display:grid;place-items:center}
+.round svg{width:20px;height:20px}
+.gal{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:-60px}
+.gal>div{flex:none;width:100%;aspect-ratio:1/1;scroll-snap-align:start;background:var(--chip);display:grid;place-items:center;font-size:110px}
+.gal img{width:100%;height:100%;object-fit:cover}
+.dbody{padding:14px 16px}
+.dbody .price{font-size:24px}
+.dbody h1{font-size:20px;margin:4px 0 8px}
+.kv{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.kv span{background:var(--chip);padding:5px 11px;border-radius:99px;font-size:13px;font-weight:600}
+.desc{white-space:pre-wrap;color:var(--txt);margin:10px 0 16px}
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+/* toast */
+#toast{position:absolute;left:50%;bottom:90px;transform:translateX(-50%) translateY(20px);background:#111;color:#fff;padding:10px 16px;border-radius:99px;font-size:14px;opacity:0;pointer-events:none;transition:.25s;z-index:50;max-width:88%;text-align:center}
+#toast.show{opacity:1;transform:translateX(-50%)}
+/* lock */
+.lock{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;background:linear-gradient(160deg,var(--pri),#06402d);color:#fff;padding-top:calc(env(safe-area-inset-top,0px) + 20px)}
+.lock .emb{width:84px;height:84px;border-radius:24px;background:var(--acc);color:#3a2600;display:grid;place-items:center;font-size:44px;font-weight:800;margin-bottom:10px;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.lock h1{margin:4px 0;font-size:26px}
+.lock p{margin:2px 0 18px;opacity:.85}
+.dots{display:flex;gap:14px;margin:4px 0 8px;height:18px}
+.dots i{width:16px;height:16px;border-radius:50%;border:2px solid #fff;opacity:.9}
+.dots i.f{background:#fff}
+.dots.bad{animation:shake .4s}
+@keyframes shake{20%,60%{transform:translateX(-10px)}40%,80%{transform:translateX(10px)}}
+.err{min-height:22px;color:#ffd0d0;font-weight:600;font-size:14px}
+.pad{display:grid;grid-template-columns:repeat(3,72px);gap:14px;margin:8px 0 16px}
+.pad button{height:72px;border-radius:50%;background:rgba(255,255,255,.14);font-size:26px;font-weight:600;color:#fff}
+.pad button:active{background:rgba(255,255,255,.32)}
+.lock .lg{display:flex;gap:8px;margin-bottom:12px}
+.lock .lg button{padding:6px 12px;border-radius:99px;background:rgba(255,255,255,.14);color:#fff;font-size:13px;font-weight:600}
+.lock .lg button.on{background:#fff;color:var(--pri)}
+.lock a{color:#fff;font-weight:700}
+/* assistant */
+.orbwrap{display:flex;flex-direction:column;align-items:center;padding:8px 0 4px}
+.orb{--lvl:0;width:132px;height:132px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#6ee7b7,var(--pri2) 55%,#06402d);box-shadow:0 0 0 calc(8px + var(--lvl)*26px) rgba(15,138,99,.22);transition:box-shadow .12s;opacity:.55}
+.orb.connecting{opacity:.9;animation:pulse 1.2s infinite}
+.orb.live{opacity:1}
+.orb.speaking{opacity:1;animation:speak .9s infinite}
+@keyframes pulse{50%{transform:scale(1.07)}}
+@keyframes speak{0%,100%{transform:scale(1);box-shadow:0 0 0 10px rgba(244,163,0,.25)}50%{transform:scale(1.06);box-shadow:0 0 0 24px rgba(244,163,0,.12)}}
+.status{margin-top:12px;font-weight:700}
+.time{color:var(--mut);font-variant-numeric:tabular-nums;font-size:14px;min-height:20px}
+.ctrl{display:flex;gap:16px;justify-content:center;margin:12px 0}
+.cbtn{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:var(--chip)}
+.cbtn.call{background:#1a9d5c;color:#fff;width:76px;height:76px}
+.cbtn.end{background:var(--red);color:#fff;width:76px;height:76px}
+.cbtn.on{background:var(--acc);color:#3a2600}
+.cbtn svg{width:30px;height:30px}
+.log{display:flex;flex-direction:column;gap:8px;margin:10px 0}
+.b{max-width:86%;padding:9px 13px;border-radius:16px;font-size:15px;white-space:pre-wrap}
+.b.u{align-self:flex-end;background:var(--pri);color:#fff;border-bottom-right-radius:4px}
+.b.a{align-self:flex-start;background:var(--card);box-shadow:var(--shadow);border-bottom-left-radius:4px}
+.b small{display:block;opacity:.6;font-size:11px;margin-top:3px}
+.ask{display:flex;gap:8px;margin-top:6px}
+.ask button{width:48px;flex:none;border-radius:12px;background:var(--pri);color:#fff;display:grid;place-items:center}
+.ask svg{width:22px;height:22px}
+.qs{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.qs .chip{font-size:13px}
+a{color:var(--pri2)}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+"use strict";
+/* ============ CONFIG ============ */
+const CODES = ["4894","1324","3546","5768","7980","0990"];
+const PHONE = "0990609331";
+const CREATORS = "Duresa Shumbura and Rashedin";
+const DEFAULT_MODEL = "gemini-3.8-live";
+const VOICES = ["Charon","Puck","Kore","Fenrir","Aoede","Orus","Zephyr"];
+
+/* ============ SMALL HELPERS ============ */
+const $ = (s, r=document) => r.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const mem = {};
+const LS = {
+  get(k,d){ try{ const v = localStorage.getItem(k); return v==null ? d : JSON.parse(v); }catch(e){ return k in mem ? mem[k] : d; } },
+  set(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){ mem[k]=v; } }
+};
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,7);
+
+/* ============ TRANSLATIONS ============ */
+const T = {
+en:{
+  tagline:"Local market, connected", tab_home:"Home", tab_saved:"Saved", tab_post:"Post", tab_ai:"Assistant", tab_more:"More",
+  search:"Search products…", all:"All", offline_banner:"You are offline. The app still works, and new posts are saved on your phone.",
+  online:"Online", offline:"Offline", enter_code:"Enter access code", wrong_code:"Wrong code. Try again.",
+  need_help:"Need help? Call", birr:"Birr", ask_price:"Ask price", sample:"Sample", sold:"SOLD",
+  no_items:"No listings yet", no_items_sub:"Tap Post to add the first one.", no_saved:"Nothing here yet",
+  saved:"Saved", my_posts:"My posts",
+  post_title:"Post a listing", post_sub:"Takes under a minute. Works offline.", photos:"Photos", add_photo:"Add",
+  f_title:"Title", f_cat:"Category", f_price:"Price (Birr)", f_loc:"Location", f_phone:"Phone number", f_desc:"Description", f_name:"Your name",
+  publish:"Publish", published:"Listing saved on this phone", need_fields:"Please add a title, category and a valid phone number.",
+  call:"Call", whatsapp:"WhatsApp", sms:"SMS", share:"Share", save:"Save", unsave:"Unsave", report:"Report", reported:"Thanks, we noted your report.",
+  del:"Delete", deleted:"Deleted", mark_sold:"Mark as sold", mark_avail:"Mark available", confirm_del:"Delete this listing?",
+  seller:"Seller", posted:"Posted", sample_note:"This is a sample listing so you can see how the app looks.",
+  safety:"Safety tip: meet in a public place and check the item before paying.",
+  ago_now:"Just now", ago_m:"{n}m ago", ago_h:"{n}h ago", ago_d:"{n}d ago",
+  ai_title:"Voice assistant", ai_sub:"Ask anything. Powered by Gemini (voice: Charon).",
+  st_idle:"Tap to start the call", st_connecting:"Connecting…", st_live:"Listening… speak now", st_speaking:"Speaking…", st_reconnecting:"Reconnecting…",
+  st_offline:"Offline: built-in answers only", st_nokey:"Add a free Gemini key to enable voice",
+  mute:"Mute", unmute:"Unmute", end_call:"End call", start_call:"Start call", ask_ph:"Type a question…",
+  key_title:"Turn on the voice assistant (free)", key_help:"1) Open aistudio.google.com/apikey and create a free key.  2) Paste it below.  It stays on this phone only.",
+  key_ph:"Paste Gemini API key", key_save:"Save key", key_saved:"Key saved",
+  mic_err:"Microphone is blocked or unavailable. Allow the microphone for this page and try again. (Voice needs https or a downloaded app.)",
+  conn_err:"Could not connect to the assistant.", call_long:"Long calls stay connected automatically.",
+  q1:"Who created you?", q2:"How do I post?", q3:"Is it safe to buy?", q4:"Does it work offline?", q5:"Contact us",
+  settings:"Settings", language:"Language", profile:"My profile", assistant_set:"Assistant settings", model:"Model", voice:"Voice",
+  data:"Data", export:"Export my listings", import:"Import listings", clear:"Delete all listings", exported:"File saved", imported:"Imported {n} listings", confirm_clear:"Delete ALL listings on this phone?",
+  about:"About", contact:"For more information call us", created_by:"Created by " + CREATORS, lock_app:"Lock app", install:"Install app", version:"Version 1.0",
+  offline_ready:"Offline-ready: all listings and the app itself are stored on this phone.",
+  faq_creator:"I was created by " + CREATORS + ".",
+},
+am:{
+  tagline:"የአካባቢ ገበያ፣ የተገናኘ", tab_home:"መነሻ", tab_saved:"የተቀመጡ", tab_post:"ለጥፍ", tab_ai:"ረዳት", tab_more:"ተጨማሪ",
+  search:"ምርት ፈልግ…", all:"ሁሉም", offline_banner:"ኢንተርኔት የለም። አፑ አሁንም ይሰራል፤ አዳዲስ ማስታወቂያዎች በስልክዎ ላይ ይቀመጣሉ።",
+  online:"ኢንተርኔት አለ", offline:"ያለ ኢንተርኔት", enter_code:"የመግቢያ ኮድ ያስገቡ", wrong_code:"ኮዱ ትክክል አይደለም። እንደገና ይሞክሩ።",
+  need_help:"እርዳታ ይፈልጋሉ? ይደውሉ", birr:"ብር", ask_price:"ዋጋ ጠይቅ", sample:"ናሙና", sold:"ተሽጧል",
+  no_items:"እስካሁን ምንም ምርት የለም", no_items_sub:"የመጀመሪያውን ለመጨመር «ለጥፍ» ይጫኑ።", no_saved:"እዚህ ምንም የለም",
+  saved:"የተቀመጡ", my_posts:"የኔ ማስታወቂያዎች",
+  post_title:"ምርት ለጥፍ", post_sub:"ከአንድ ደቂቃ በታች ይወስዳል። ያለ ኢንተርኔትም ይሰራል።", photos:"ፎቶዎች", add_photo:"ጨምር",
+  f_title:"ርዕስ", f_cat:"ምድብ", f_price:"ዋጋ (ብር)", f_loc:"አካባቢ", f_phone:"ስልክ ቁጥር", f_desc:"መግለጫ", f_name:"ስምዎ",
+  publish:"ለጥፍ", published:"በዚህ ስልክ ላይ ተቀምጧል", need_fields:"እባክዎ ርዕስ፣ ምድብ እና ትክክለኛ ስልክ ቁጥር ያስገቡ።",
+  call:"ደውል", whatsapp:"ዋትስአፕ", sms:"መልእክት", share:"አጋራ", save:"አስቀምጥ", unsave:"አስወግድ", report:"አሳውቅ", reported:"ስለ ሪፖርቱ እናመሰግናለን።",
+  del:"ሰርዝ", deleted:"ተሰርዟል", mark_sold:"ተሽጧል በል", mark_avail:"እንደገና ይገኛል በል", confirm_del:"ይህን ማስታወቂያ ይሰረዝ?",
+  seller:"ሻጭ", posted:"የተለጠፈው", sample_note:"አፑ ምን እንደሚመስል ለማሳየት የተዘጋጀ ናሙና ማስታወቂያ ነው።",
+  safety:"የደህንነት ምክር፦ በሕዝብ ቦታ ተገናኝተው እቃውን ከመክፈልዎ በፊት ይመልከቱ።",
+  ago_now:"አሁን", ago_m:"ከ{n} ደቂቃ በፊት", ago_h:"ከ{n} ሰዓት በፊት", ago_d:"ከ{n} ቀን በፊት",
+  ai_title:"የድምጽ ረዳት", ai_sub:"ማንኛውንም ይጠይቁ። በ Gemini (ድምጽ፦ Charon) የሚሰራ።",
+  st_idle:"ጥሪውን ለመጀመር ይጫኑ", st_connecting:"እየተገናኘ ነው…", st_live:"እያዳመጥኩ ነው… ይናገሩ", st_speaking:"እየተናገረ ነው…", st_reconnecting:"እንደገና እየተገናኘ ነው…",
+  st_offline:"ያለ ኢንተርኔት፦ አብሮ የተሰሩ መልሶች ብቻ", st_nokey:"ድምጹን ለማብራት ነጻ Gemini ቁልፍ ይጨምሩ",
+  mute:"ድምጽ አጥፋ", unmute:"ድምጽ አብራ", end_call:"ጥሪ ጨርስ", start_call:"ጥሪ ጀምር", ask_ph:"ጥያቄ ይጻፉ…",
+  key_title:"የድምጽ ረዳቱን አብራ (ነጻ)", key_help:"1) aistudio.google.com/apikey ላይ ነጻ ቁልፍ ይፍጠሩ። 2) ከታች ይለጥፉት። በዚህ ስልክ ላይ ብቻ ይቀመጣል።",
+  key_ph:"Gemini API ቁልፍ ይለጥፉ", key_save:"ቁልፍ አስቀምጥ", key_saved:"ቁልፉ ተቀምጧል",
+  mic_err:"ማይክሮፎን ታግዷል ወይም አይገኝም። ለዚህ ገጽ ማይክሮፎን ይፍቀዱና እንደገና ይሞክሩ።",
+  conn_err:"ከረዳቱ ጋር መገናኘት አልተቻለም።", call_long:"ረጅም ጥሪዎች በራስ-ሰር እንደተገናኙ ይቆያሉ።",
+  q1:"ማን ፈጠረህ?", q2:"እንዴት እለጥፋለሁ?", q3:"መግዛት አስተማማኝ ነው?", q4:"ያለ ኢንተርኔት ይሰራል?", q5:"አግኙን",
+  settings:"ቅንብሮች", language:"ቋንቋ", profile:"የኔ መገለጫ", assistant_set:"የረዳት ቅንብሮች", model:"ሞዴል", voice:"ድምጽ",
+  data:"መረጃ", export:"ማስታወቂያዎቼን ላክ", import:"ማስታወቂያዎችን አስገባ", clear:"ሁሉንም ማስታወቂያ ሰርዝ", exported:"ፋይሉ ተቀምጧል", imported:"{n} ማስታወቂያዎች ገብተዋል", confirm_clear:"በዚህ ስልክ ላይ ያሉ ሁሉም ማስታወቂያዎች ይሰረዙ?",
+  about:"ስለ አፑ", contact:"ለተጨማሪ መረጃ ይደውሉልን", created_by:"የተሰራው በ " + CREATORS, lock_app:"አፑን ቆልፍ", install:"አፑን ጫን", version:"ስሪት 1.0",
+  offline_ready:"ያለ ኢንተርኔት ዝግጁ፦ ሁሉም ማስታወቂያዎችና አፑ ራሱ በዚህ ስልክ ላይ ይቀመጣሉ።",
+  faq_creator:"የተፈጠርኩት በ " + CREATORS + " ነው።",
+},
+om:{
+  tagline:"Gabaa naannoo, wal-qabate", tab_home:"Jalqaba", tab_saved:"Kuufame", tab_post:"Maxxansi", tab_ai:"Gargaaraa", tab_more:"Kan biroo",
+  search:"Meeshaa barbaadi…", all:"Hunda", offline_banner:"Interneetii hin qabdu. Appiin ammallee ni hojjata; maxxansni haaraan bilbila keessan irratti kuufama.",
+  online:"Interneetii jira", offline:"Interneetii malee", enter_code:"Koodii seensaa galchi", wrong_code:"Koodiin sirrii miti. Irra deebi'i.",
+  need_help:"Gargaarsa barbaaddanii? Bilbilaa", birr:"Birrii", ask_price:"Gatii gaafadhu", sample:"Fakkeenya", sold:"GURGURAMEERA",
+  no_items:"Ammaaf meeshaan hin jiru", no_items_sub:"Inni jalqabaa dabaluuf «Maxxansi» tuqi.", no_saved:"Asirratti homtu hin jiru",
+  saved:"Kuufame", my_posts:"Maxxansa koo",
+  post_title:"Meeshaa maxxansi", post_sub:"Daqiiqaa tokko gadi fudhata. Interneetii malee ni hojjata.", photos:"Suuraawwan", add_photo:"Dabali",
+  f_title:"Mata-duree", f_cat:"Ramaddii", f_price:"Gatii (Birrii)", f_loc:"Bakka", f_phone:"Lakkoofsa bilbilaa", f_desc:"Ibsa", f_name:"Maqaa kee",
+  publish:"Maxxansi", published:"Bilbila kana irratti kuufameera", need_fields:"Maaloo mata-duree, ramaddii fi lakkoofsa bilbilaa sirrii galchi.",
+  call:"Bilbili", whatsapp:"WhatsApp", sms:"Ergaa", share:"Qoodi", save:"Kuusi", unsave:"Baasi", report:"Gabaasi", reported:"Gabaasa keessaniif galatoomaa.",
+  del:"Haqi", deleted:"Haqameera", mark_sold:"Gurgurameera jedhi", mark_avail:"Ni argama jedhi", confirm_del:"Maxxansa kana haquu?",
+  seller:"Gurgurtaa", posted:"Kan maxxanfame", sample_note:"Kun akkamitti akka fakkaatu agarsiisuuf maxxansa fakkeenyaati.",
+  safety:"Gorsa nageenyaa: bakka hundaaf banaa irratti wal argaa, kaffaltii dura meeshaa ilaalaa.",
+  ago_now:"Amma", ago_m:"daqiiqaa {n} dura", ago_h:"sa'aatii {n} dura", ago_d:"guyyaa {n} dura",
+  ai_title:"Gargaaraa sagalee", ai_sub:"Wanta barbaaddan hunda gaafadhaa. Gemini (sagalee: Charon).",
+  st_idle:"Waamicha jalqabuuf tuqi", st_connecting:"Wal-qunnamaa jira…", st_live:"Dhaggeeffachaa jira… dubbadhu", st_speaking:"Dubbachaa jira…", st_reconnecting:"Irra deebi'ee wal-qunnamaa jira…",
+  st_offline:"Interneetii malee: deebii ijaaraman qofa", st_nokey:"Sagalee dandeessisuuf furtuu Gemini bilisaa dabali",
+  mute:"Callisiisi", unmute:"Bani", end_call:"Xumuri", start_call:"Jalqabi", ask_ph:"Gaaffii barreessi…",
+  key_title:"Gargaaraa sagalee ol kaasi (bilisaan)", key_help:"1) aistudio.google.com/apikey irratti furtuu bilisaa uumi. 2) Gaditti maxxansi. Bilbila kana irra qofa turata.",
+  key_ph:"Furtuu Gemini API maxxansi", key_save:"Furtuu kuusi", key_saved:"Furtuun kuufameera",
+  mic_err:"Maayikiroofoonii cufameera ykn hin argamu. Fuula kanaaf hayyami, irra deebi'i.",
+  conn_err:"Gargaaraa waliin wal-qunnamuu hin dandeenye.", call_long:"Waamichi dheeraan ofumaan wal-qabatee turata.",
+  q1:"Eenyutu si uume?", q2:"Akkamitti maxxansa?", q3:"Bituun nageenya?", q4:"Interneetii malee ni hojjata?", q5:"Nu quunnamaa",
+  settings:"Qindaa'ina", language:"Afaan", profile:"Ibsa koo", assistant_set:"Qindaa'ina gargaaraa", model:"Moodeela", voice:"Sagalee",
+  data:"Daataa", export:"Maxxansa koo ergi", import:"Maxxansa galchi", clear:"Maxxansa hunda haqi", exported:"Faayilli kuufameera", imported:"Maxxansni {n} galfameera", confirm_clear:"Maxxansa bilbila kana irra jiru hunda haquu?",
+  about:"Waa'ee app", contact:"Odeeffannoo dabalataaf nu bilbilaa", created_by:"Kan hojjetan " + CREATORS, lock_app:"App cufi", install:"App fe'i", version:"Bocaa 1.0",
+  offline_ready:"Interneetii malee qophaa'aa: maxxansni hundi fi appiin ofii bilbila kana irra kuufamu.",
+  faq_creator:"Ani kan uumame " + CREATORS + " dhaan.",
+}};
+const S = {
+  lang: LS.get("gb_lang","en"), tab:"home", cat:"all", q:"", listings:[], saved:new Set(LS.get("gb_saved",[])),
+  savedView:"saved", profile:LS.get("gb_profile",{name:"",phone:""}),
+  settings:Object.assign({key:"",model:DEFAULT_MODEL,voice:"Charon"}, LS.get("gb_settings",{})),
+  unlocked:LS.get("gb_unlocked",false), online:navigator.onLine, detail:null, buf:"", draft:null, chat:[]
+};
+const t = (k,v) => { let s = (T[S.lang] && T[S.lang][k]) || T.en[k] || k; if(v) for(const x in v) s = s.replace("{"+x+"}", v[x]); return s; };
+
+const CATS = [
+ {id:"phones",e:"📱",en:"Phones & Electronics",am:"ስልክና ኤሌክትሮኒክስ",om:"Bilbilaa fi Elektirooniksii"},
+ {id:"vehicles",e:"🚗",en:"Vehicles",am:"ተሽከርካሪዎች",om:"Konkolaataa"},
+ {id:"property",e:"🏠",en:"Property",am:"ቤትና ንብረት",om:"Manaa fi Qabeenya"},
+ {id:"furniture",e:"🛋️",en:"Furniture",am:"የቤት ዕቃዎች",om:"Meeshaalee Manaa"},
+ {id:"fashion",e:"👕",en:"Fashion",am:"ፋሽንና ልብስ",om:"Uffata"},
+ {id:"farm",e:"🌾",en:"Food & Farm",am:"ምግብና እርሻ",om:"Nyaataa fi Qonna"},
+ {id:"services",e:"🛠️",en:"Services",am:"አገልግሎት",om:"Tajaajila"},
+ {id:"jobs",e:"💼",en:"Jobs",am:"ሥራ",om:"Hojii"},
+ {id:"other",e:"📦",en:"Other",am:"ሌላ",om:"Kan biroo"}];
+const catOf = id => CATS.find(c=>c.id===id) || CATS[CATS.length-1];
+const catName = id => catOf(id)[S.lang] || catOf(id).en;
+
+/* ============ OFFLINE FAQ (no AI needed) ============ */
+const FAQ = [
+ {k:["who created","who made","who built","creator","created you","made you","built you","developer","ማን ፈጠረ","ማን ሰራ","ማን ሠራ","ፈጠረህ","ሰራህ","ሠራህ","የሰራው","eenyutu si uume","eenyutu hojjete","kan si uume","kan si hojjete"],
+  a:()=>t("faq_creator")},
+ {k:["contact","call us","phone number","support","more information","አግኙ","ስልክ ቁጥር","ለመደወል","ተጨማሪ መረጃ","nu quunnam","bilbila","odeeffannoo"],
+  a:()=>({en:"For more information call us: "+PHONE,am:"ለተጨማሪ መረጃ ይደውሉልን፦ "+PHONE,om:"Odeeffannoo dabalataaf nu bilbilaa: "+PHONE})[S.lang]},
+ {k:["how do i post","how to post","sell","add listing","post","እንዴት እለጥፋ","ለመሸጥ","ለጥፍ","እንዴት እሸጣለሁ","akkamitti maxxans","gurgur"],
+  a:()=>({en:"Tap the orange Post button, add photos, a title, category, price and your phone number, then press Publish. It works even without internet and is saved on your phone.",am:"ብርቱካናማውን «ለጥፍ» ቁልፍ ይጫኑ፣ ፎቶ፣ ርዕስ፣ ምድብ፣ ዋጋና ስልክ ቁጥር ያስገቡ፣ ከዚያ «ለጥፍ» ይጫኑ። ያለ ኢንተርኔትም ይሰራል፤ በስልክዎ ላይ ይቀመጣል።",om:"Button Maxxansi keelloo tuqi, suuraa, mata-duree, ramaddii, gatii fi lakkoofsa bilbilaa galchi, ergasii Maxxansi tuqi. Interneetii malee ni hojjata."})[S.lang]},
+ {k:["safe","scam","trust","fraud","secure","አስተማማኝ","ማጭበርበር","ደህን","nageenya","gowwoomsa"],
+  a:()=>t("safety")+" "+({en:"Never pay in advance to someone you have not met, and report suspicious listings.",am:"ካላገኙት ሰው ቀድመው አይክፈሉ፤ አጠራጣሪ ማስታወቂያዎችን ሪፖርት ያድርጉ።",om:"Nama hin argine dursanii hin kaffalinaa; maxxansa shakkisiisaa gabaasaa."})[S.lang]},
+ {k:["offline","no internet","without internet","internet","ኢንተርኔት","ያለ ኢንተርኔት","interneetii"],
+  a:()=>({en:"Yes. After you download or install the app, browsing, searching and posting work without internet. Only the voice assistant needs internet.",am:"አዎ። አፑን ካወረዱ ወይም ከጫኑ በኋላ ማሰስ፣ መፈለግና መለጠፍ ያለ ኢንተርኔት ይሰራሉ። የድምጽ ረዳቱ ብቻ ኢንተርኔት ይፈልጋል።",om:"Eeyyee. Appii buusanii booda, sakatta'uu, barbaaduu fi maxxansuun interneetii malee ni hojjata. Gargaaraan sagalee qofti interneetii barbaada."})[S.lang]},
+ {k:["price","how much","worth","ዋጋ","ስንት","gatii"],
+  a:()=>({en:"Compare 3 similar listings in the same category and price slightly below the average to sell faster.",am:"በተመሳሳይ ምድብ ያሉ 3 ተመሳሳይ ማስታወቂያዎችን አወዳድረው ከአማካዩ ትንሽ ዝቅ አድርገው ይሸጡ።",om:"Maxxansa walfakkaatu 3 wal-bira qabaa; gatii giddugaleessaa irra xiqqoo gadi buusaa."})[S.lang]},
+];
+function faqAnswer(q){
+  const s = q.toLowerCase(); let best=null, score=0;
+  for(const f of FAQ){ let n=0; for(const k of f.k) if(s.includes(k.toLowerCase())) n++; if(n>score){score=n;best=f;} }
+  if(best) return best.a();
+  return ({en:"I am offline right now, so I can only answer app questions (creator, posting, safety, price, contact). Connect to the internet and tap Start call to ask me anything.",am:"አሁን ኢንተርኔት ስለሌለ ስለ አፑ ጥያቄዎች ብቻ (ፈጣሪ፣ መለጠፍ፣ ደህንነት፣ ዋጋ፣ አድራሻ) መመለስ እችላለሁ። ማንኛውንም ለመጠየቅ ኢንተርኔት ያገናኙና «ጥሪ ጀምር» ይጫኑ።",om:"Amma interneetii waan hin qabneef gaaffii app qofaaf deebisuu nan danda'a (uumaa, maxxansuu, nageenya, gatii, quunnamtii). Interneetii wal qabsiisaatii «Jalqabi» tuqaa."})[S.lang];
+}
+
+/* ============ STORAGE (IndexedDB with fallback) ============ */
+let dbp = null, memList = [];
+function db(){
+  if(!dbp) dbp = new Promise((res,rej)=>{
+    try{ const r = indexedDB.open("gebeya",1);
+      r.onupgradeneeded = () => r.result.createObjectStore("listings",{keyPath:"id"});
+      r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error);
+    }catch(e){ rej(e); }
+  });
+  return dbp;
+}
+async function dbAll(){
+  try{ const d = await db(); return await new Promise((res,rej)=>{ const q=d.transaction("listings").objectStore("listings").getAll(); q.onsuccess=()=>res(q.result); q.onerror=()=>rej(q.error); }); }
+  catch(e){ return memList.slice(); }
+}
+async function dbPut(item){
+  try{ const d = await db(); await new Promise((res,rej)=>{ const tx=d.transaction("listings","readwrite"); tx.objectStore("listings").put(item); tx.oncomplete=res; tx.onerror=()=>rej(tx.error); }); }
+  catch(e){ memList = memList.filter(x=>x.id!==item.id).concat(item); }
+}
+async function dbDel(id){
+  try{ const d = await db(); await new Promise((res,rej)=>{ const tx=d.transaction("listings","readwrite"); tx.objectStore("listings").delete(id); tx.oncomplete=res; tx.onerror=()=>rej(tx.error); }); }
+  catch(e){ memList = memList.filter(x=>x.id!==id); }
+}
+async function loadListings(){
+  let all = await dbAll();
+  if(!LS.get("gb_seeded",false)){
+    const now = Date.now(), H = 3600e3;
+    const seed = [
+      {title:"Samsung Galaxy A54, like new",cat:"phones",price:19500,loc:"Bole, Addis Ababa",emoji:"📱",desc:"128GB, box and charger included. Used for 3 months.",age:2*H},
+      {title:"3-seat sofa, good condition",cat:"furniture",price:14000,loc:"Piassa, Addis Ababa",emoji:"🛋️",desc:"Comfortable grey sofa. Buyer collects.",age:9*H},
+      {title:"Toyota Vitz 2010",cat:"vehicles",price:820000,loc:"Adama",emoji:"🚗",desc:"Well maintained, all papers ready.",age:26*H},
+      {title:"Fresh teff, 50 kg",cat:"farm",price:6200,loc:"Debre Zeit",emoji:"🌾",desc:"Direct from the farm. Delivery possible.",age:5*H},
+      {title:"Phone screen repair",cat:"services",price:800,loc:"Hawassa",emoji:"🛠️",desc:"Same-day repair for most phones.",age:50*H},
+      {title:"2-bedroom apartment for rent",cat:"property",price:18000,loc:"Bahir Dar",emoji:"🏠",desc:"Per month. Near the main road.",age:70*H}
+    ].map(s=>({id:"sample-"+uid(),title:s.title,cat:s.cat,price:s.price,loc:s.loc,emoji:s.emoji,desc:s.desc,phone:"",seller:"",photos:[],created:now-s.age,sold:false,sample:true,mine:false}));
+    for(const s of seed){ await dbPut(s); }
+    LS.set("gb_seeded",true); all = await dbAll();
+  }
+  S.listings = all.sort((a,b)=>b.created-a.created);
+}
+
+/* ============ UTILITIES ============ */
+const fmtPrice = p => (p===""||p==null||isNaN(p)) ? t("ask_price") : Number(p).toLocaleString("en-US")+" "+t("birr");
+function ago(ts){
+  const m = Math.floor((Date.now()-ts)/60000);
+  if(m<1) return t("ago_now"); if(m<60) return t("ago_m",{n:m});
+  const h = Math.floor(m/60); if(h<24) return t("ago_h",{n:h});
+  return t("ago_d",{n:Math.floor(h/24)});
+}
+function intlPhone(p){ let d=String(p).replace(/\D/g,""); if(d.startsWith("251")) return d; if(d.startsWith("0")) return "251"+d.slice(1); return d; }
+function toast(msg){ const el=$("#toast"); if(!el) return; el.textContent=msg; el.classList.add("show"); clearTimeout(toast.h); toast.h=setTimeout(()=>el.classList.remove("show"),2400); }
+function compress(file,max=900,q=0.72){
+  return new Promise((res,rej)=>{
+    const img=new Image(), url=URL.createObjectURL(file);
+    img.onload=()=>{ const s=Math.min(1,max/Math.max(img.width,img.height)); const c=document.createElement("canvas");
+      c.width=Math.round(img.width*s); c.height=Math.round(img.height*s); c.getContext("2d").drawImage(img,0,0,c.width,c.height);
+      URL.revokeObjectURL(url); res(c.toDataURL("image/jpeg",q)); };
+    img.onerror=()=>{URL.revokeObjectURL(url);rej();}; img.src=url;
+  });
+}
+const ICON = {
+  home:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>',
+  heart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5.5 5.5 0 00-7.8 0L12 6.7l-1-1.1a5.5 5.5 0 10-7.8 7.8l1 1.1L12 22l7.8-7.5 1-1.1a5.5 5.5 0 000-7.8z"/></svg>',
+  plus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>',
+  mic:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v4"/></svg>',
+  more:'<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg>',
+  search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>',
+  phone:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>',
+  x:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>',
+  send:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>',
+  micoff:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l22 22M9 9v2a3 3 0 005.1 2.1M15 9.3V5a3 3 0 00-5.9-.8M17 16.9A7 7 0 015 11M19 11a7 7 0 01-.1 1.2M12 18v4"/></svg>',
+  share:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>'
+};
+
+/* ============ VIEWS ============ */
+function lockView(){
+  const dots = [0,1,2,3].map(i=>`<i class="${i<S.buf.length?"f":""}"></i>`).join("");
+  const keys = ["1","2","3","4","5","6","7","8","9","","0","⌫"].map(k=> k===""?"<span></span>":`<button data-act="key" data-k="${k}" aria-label="${k}">${k}</button>`).join("");
+  return `<div class="lock">
+    <div class="emb">ገ</div><h1>Gebeya ገበያ</h1><p>${esc(t("enter_code"))}</p>
+    <div class="lg">${["en","am","om"].map(l=>`<button data-act="lang" data-l="${l}" class="${S.lang===l?"on":""}">${{en:"English",am:"አማርኛ",om:"Oromoo"}[l]}</button>`).join("")}</div>
+    <div class="dots" id="dots">${dots}</div><div class="err" id="err"></div>
+    <div class="pad">${keys}</div>
+    <div>${esc(t("need_help"))} <a href="tel:${PHONE}">${PHONE}</a></div>
+  </div>`;
+}
+function matches(l){
+  if(S.cat!=="all" && l.cat!==S.cat) return false;
+  const q = S.q.trim().toLowerCase(); if(!q) return true;
+  const hay = (l.title+" "+(l.desc||"")+" "+(l.loc||"")+" "+catName(l.cat)+" "+catOf(l.cat).en).toLowerCase();
+  return q.split(/\s+/).every(w=>hay.includes(w));
+}
+function cardHTML(l){
+  const th = l.photos && l.photos[0] ? `<img loading="lazy" src="${l.photos[0]}" alt="">` : esc(l.emoji || catOf(l.cat).e);
+  const tag = l.sold ? `<div class="tag sold">${esc(t("sold"))}</div>` : (l.sample ? `<div class="tag">${esc(t("sample"))}</div>` : "");
+  return `<div class="card" data-act="open" data-id="${l.id}"><div class="thumb">${th}</div>${tag}
+    <div class="cb"><div class="price">${esc(fmtPrice(l.price))}</div><div class="title">${esc(l.title)}</div>
+    <div class="meta">${l.loc?"📍 "+esc(l.loc)+" · ":""}${esc(ago(l.created))}</div></div></div>`;
+}
+function listHTML(items, emptyKey="no_items"){
+  if(!items.length) return `<div class="empty"><div class="big">🛒</div><b>${esc(t(emptyKey))}</b><div>${esc(t("no_items_sub"))}</div></div>`;
+  return `<div class="grid">${items.map(cardHTML).join("")}</div>`;
+}
+function homeView(){
+  const chips = [{id:"all",e:"✨",n:t("all")}].concat(CATS.map(c=>({id:c.id,e:c.e,n:catName(c.id)})))
+    .map(c=>`<button class="chip ${S.cat===c.id?"on":""}" data-act="cat" data-id="${c.id}">${c.e} ${esc(c.n)}</button>`).join("");
+  return `${S.online?"":`<div class="banner">${esc(t("offline_banner"))}</div>`}
+    <div class="search">${ICON.search}<input id="q" type="search" data-search placeholder="${esc(t("search"))}" value="${esc(S.q)}" autocomplete="off"></div>
+    <div class="chips">${chips}</div><div id="list">${listHTML(S.listings.filter(matches))}</div>`;
+}
+function savedView(){
+  const items = S.savedView==="saved" ? S.listings.filter(l=>S.saved.has(l.id)) : S.listings.filter(l=>l.mine);
+  return `<div class="seg" style="margin-bottom:12px"><button data-act="sv" data-v="saved" class="${S.savedView==="saved"?"on":""}">${esc(t("saved"))}</button><button data-act="sv" data-v="mine" class="${S.savedView==="mine"?"on":""}">${esc(t("my_posts"))}</button></div>${listHTML(items,"no_saved")}`;
+}
+function newDraft(){ return {title:"",cat:"phones",price:"",loc:"",phone:S.profile.phone||"",desc:"",seller:S.profile.name||"",photos:[]}; }
+function postView(){
+  if(!S.draft) S.draft = newDraft(); const d = S.draft;
+  const ph = d.photos.map((p,i)=>`<div class="ph"><img src="${p}" alt=""><span class="x" data-act="rmph" data-i="${i}">×</span></div>`).join("");
+  const add = d.photos.length<4 ? `<label class="ph" style="margin:0;cursor:pointer">📷<input id="file" type="file" accept="image/*" multiple hidden></label>` : "";
+  const opts = CATS.map(c=>`<option value="${c.id}" ${d.cat===c.id?"selected":""}>${c.e} ${esc(catName(c.id))}</option>`).join("");
+  return `<h2>${esc(t("post_title"))}</h2><p class="sub">${esc(t("post_sub"))}</p>
+    <label>${esc(t("photos"))}</label><div class="photos">${ph}${add}</div>
+    <label>${esc(t("f_title"))}</label><input data-f="title" value="${esc(d.title)}" maxlength="80">
+    <label>${esc(t("f_cat"))}</label><select data-f="cat">${opts}</select>
+    <label>${esc(t("f_price"))}</label><input data-f="price" type="number" inputmode="numeric" value="${esc(d.price)}">
+    <label>${esc(t("f_loc"))}</label><input data-f="loc" value="${esc(d.loc)}" maxlength="60">
+    <label>${esc(t("f_name"))}</label><input data-f="seller" value="${esc(d.seller)}" maxlength="40">
+    <label>${esc(t("f_phone"))}</label><input data-f="phone" type="tel" inputmode="tel" value="${esc(d.phone)}" maxlength="16">
+    <label>${esc(t("f_desc"))}</label><textarea data-f="desc" maxlength="600">${esc(d.desc)}</textarea>
+    <div style="height:14px"></div><button class="btn acc" data-act="publish">${esc(t("publish"))}</button>`;
+}
+function chatHTML(){
+  return S.chat.map(m=>`<div class="b ${m.role==="user"?"u":"a"}">${esc(m.text)}${m.tag?`<small>${esc(m.tag)}</small>`:""}</div>`).join("");
+}
+function aiView(){
+  const noKey = !S.settings.key;
+  const keyCard = noKey ? `<div class="box"><h3>${esc(t("key_title"))}</h3><p class="sub">${esc(t("key_help"))}</p>
+    <input id="keyin" type="password" placeholder="${esc(t("key_ph"))}" autocomplete="off"><div style="height:8px"></div>
+    <button class="btn" data-act="savekey">${esc(t("key_save"))}</button></div>` : "";
+  const qs = ["q1","q2","q3","q4","q5"].map(k=>`<button class="chip" data-act="faq" data-q="${k}">${esc(t(k))}</button>`).join("");
+  return `<h2>${esc(t("ai_title"))}</h2><p class="sub">${esc(t("ai_sub"))}</p>${keyCard}
+    <div class="orbwrap"><div class="orb" id="orb"></div><div class="status" id="status"></div><div class="time" id="ctime"></div></div>
+    <div class="ctrl" id="ctrl"></div>
+    <div class="qs">${qs}</div>
+    <div class="log" id="log">${chatHTML()}</div>
+    <div class="ask"><input id="ask" placeholder="${esc(t("ask_ph"))}" autocomplete="off"><button data-act="asksend" aria-label="send">${ICON.send}</button></div>`;
+}
+function moreView(){
+  const p = S.profile, s = S.settings;
+  const voices = VOICES.map(v=>`<option ${s.voice===v?"selected":""}>${v}</option>`).join("");
+  return `<h2>${esc(t("settings"))}</h2>
+  <div class="box"><h3>${esc(t("language"))}</h3><div class="seg">${["en","am","om"].map(l=>`<button data-act="lang" data-l="${l}" class="${S.lang===l?"on":""}">${{en:"English",am:"አማርኛ",om:"Oromoo"}[l]}</button>`).join("")}</div></div>
+  <div class="box"><h3>${esc(t("profile"))}</h3>
+    <label>${esc(t("f_name"))}</label><input data-p="name" value="${esc(p.name)}">
+    <label>${esc(t("f_phone"))}</label><input data-p="phone" type="tel" value="${esc(p.phone)}"></div>
+  <div class="box"><h3>${esc(t("assistant_set"))}</h3>
+    <label>Gemini API key</label><input data-s="key" type="password" value="${esc(s.key)}" placeholder="${esc(t("key_ph"))}" autocomplete="off">
+    <label>${esc(t("model"))}</label><input data-s="model" value="${esc(s.model)}">
+    <label>${esc(t("voice"))}</label><select data-s="voice">${voices}</select></div>
+  <div class="box"><h3>${esc(t("data"))}</h3><p class="sub">${esc(t("offline_ready"))}</p>
+    <div class="acts"><button class="btn sec" data-act="export">${esc(t("export"))}</button><label class="btn sec" style="margin:0;cursor:pointer;color:var(--txt);font-size:16px">${esc(t("import"))}<input id="imp" type="file" accept="application/json,.json" hidden></label></div>
+    <button class="btn red" data-act="clear">${esc(t("clear"))}</button></div>
+  <div class="box"><h3>${esc(t("about"))}</h3>
+    <p style="margin:6px 0">${esc(t("contact"))}:</p>
+    <a class="btn" href="tel:${PHONE}" style="text-decoration:none">${ICON.phone} ${PHONE}</a>
+    <p class="sub" style="margin-top:12px">${esc(t("created_by"))}<br>${esc(t("version"))}</p>
+    ${deferredInstall?`<button class="btn sec" data-act="install">${esc(t("install"))}</button><div style="height:8px"></div>`:""}
+    <button class="btn sec" data-act="lock">${esc(t("lock_app"))}</button></div>`;
+}
+function detailView(){
+  const l = S.listings.find(x=>x.id===S.detail); if(!l) return "";
+  const gal = (l.photos&&l.photos.length ? l.photos.map(p=>`<div><img src="${p}" alt=""></div>`) : [`<div>${esc(l.emoji||catOf(l.cat).e)}</div>`]).join("");
+  const has = !!l.phone;
+  const saved = S.saved.has(l.id);
+  return `<div class="sheet"><div class="top"><button class="round" data-act="close" aria-label="close">${ICON.x}</button><button class="round" data-act="save" data-id="${l.id}" style="${saved?"color:var(--red)":""}" aria-label="save">${ICON.heart}</button></div>
+    <div class="gal">${gal}</div><div class="dbody">
+      <div class="price">${esc(fmtPrice(l.price))}</div><h1>${esc(l.title)}${l.sold?` · <span style="color:var(--red)">${esc(t("sold"))}</span>`:""}</h1>
+      <div class="kv"><span>${catOf(l.cat).e} ${esc(catName(l.cat))}</span>${l.loc?`<span>📍 ${esc(l.loc)}</span>`:""}<span>🕒 ${esc(ago(l.created))}</span></div>
+      ${l.desc?`<div class="desc">${esc(l.desc)}</div>`:""}
+      ${l.sample?`<div class="banner">${esc(t("sample_note"))}</div>`:""}
+      ${l.seller?`<p><b>${esc(t("seller"))}:</b> ${esc(l.seller)}</p>`:""}
+      ${has?`<div class="acts"><a class="btn" style="text-decoration:none" href="tel:${esc(l.phone)}">${ICON.phone} ${esc(t("call"))}</a><a class="btn sec" style="text-decoration:none" href="https://wa.me/${intlPhone(l.phone)}" target="_blank" rel="noopener">${esc(t("whatsapp"))}</a></div>
+        <div class="acts"><a class="btn sec" style="text-decoration:none" href="sms:${esc(l.phone)}">${esc(t("sms"))}</a><button class="btn sec" data-act="share" data-id="${l.id}">${ICON.share} ${esc(t("share"))}</button></div>`
+        :`<button class="btn sec" data-act="share" data-id="${l.id}">${ICON.share} ${esc(t("share"))}</button><div style="height:10px"></div>`}
+      <p class="sub">🛡️ ${esc(t("safety"))}</p>
+      ${l.mine?`<div class="acts"><button class="btn sec" data-act="sold" data-id="${l.id}">${esc(l.sold?t("mark_avail"):t("mark_sold"))}</button><button class="btn red" data-act="delete" data-id="${l.id}">${esc(t("del"))}</button></div>`
+        :`<button class="btn red" data-act="report" data-id="${l.id}">${esc(t("report"))}</button>`}
+    </div></div>`;
+}
+function navHTML(){
+  const it = (id,ic,label,cls="") => `<button class="${cls} ${S.tab===id?"on":""}" data-act="tab" data-id="${id}">${id==="post"?`<span class="plus">${ICON.plus}</span>`:ICON[ic]}<span>${esc(label)}</span></button>`;
+  return `<nav>${it("home","home",t("tab_home"))}${it("saved","heart",t("tab_saved"))}${it("post","plus",t("tab_post"),"post")}${it("ai","mic",t("tab_ai"))}${it("more","more",t("tab_more"))}</nav>`;
+}
+function render(){
+  document.documentElement.lang = S.lang;
+  const app = $("#app");
+  if(!S.unlocked){ app.innerHTML = lockView(); return; }
+  const views = {home:homeView,saved:savedView,post:postView,ai:aiView,more:moreView};
+  app.innerHTML = `<header><div class="logo">ገበያ<small>Gebeya</small></div><span class="pill ${S.online?"":"off"}" id="net">${esc(S.online?t("online"):t("offline"))}</span></header>
+    <main id="main">${views[S.tab]()}</main>${navHTML()}${S.detail?detailView():""}<div id="toast"></div>`;
+  if(S.tab==="ai"){ updateCallUI(); const lg=$("#log"); if(lg) lg.parentElement.scrollTop = lg.parentElement.scrollHeight; }
+}
+
+/* ============ EVENTS ============ */
+let deferredInstall = null;
+addEventListener("beforeinstallprompt", e=>{ e.preventDefault(); deferredInstall=e; if(S.tab==="more"&&S.unlocked) render(); });
+addEventListener("online", ()=>{ S.online=true; refreshNet(); });
+addEventListener("offline", ()=>{ S.online=false; refreshNet(); });
+function refreshNet(){ if(!S.unlocked) return; if(S.tab==="home"||S.tab==="ai") render(); else { const n=$("#net"); if(n){ n.textContent=S.online?t("online"):t("offline"); n.className="pill "+(S.online?"":"off"); } } }
+
+function pressKey(k){
+  if(k==="⌫"){ S.buf=S.buf.slice(0,-1); }
+  else if(S.buf.length<4){ S.buf+=k; }
+  const dots=$("#dots"); if(dots) dots.innerHTML=[0,1,2,3].map(i=>`<i class="${i<S.buf.length?"f":""}"></i>`).join("");
+  if(S.buf.length===4){
+    if(CODES.includes(S.buf)){ S.unlocked=true; LS.set("gb_unlocked",true); S.buf=""; render(); }
+    else { const d=$("#dots"), e=$("#err"); if(e) e.textContent=t("wrong_code"); if(d){ d.classList.add("bad"); }
+      setTimeout(()=>{ S.buf=""; const d2=$("#dots"); if(d2){ d2.classList.remove("bad"); d2.innerHTML=[0,1,2,3].map(()=>"<i></i>").join(""); } },420); }
+  }
+}
+addEventListener("keydown", e=>{
+  if(S.unlocked) return; if(/^\d$/.test(e.key)) pressKey(e.key); else if(e.key==="Backspace") pressKey("⌫");
+});
+
+document.addEventListener("click", async e=>{
+  const el = e.target.closest("[data-act]"); if(!el) return;
+  const a = el.dataset.act, id = el.dataset.id;
+  switch(a){
+    case "key": pressKey(el.dataset.k); break;
+    case "lang": S.lang=el.dataset.l; LS.set("gb_lang",S.lang); render(); break;
+    case "tab": if(S.detail) S.detail=null; S.tab=id; render(); break;
+    case "cat": S.cat=id; render(); break;
+    case "sv": S.savedView=el.dataset.v; render(); break;
+    case "open": S.detail=id; render(); break;
+    case "close": S.detail=null; render(); break;
+    case "save": if(S.saved.has(id)) S.saved.delete(id); else S.saved.add(id); LS.set("gb_saved",[...S.saved]); render(); toast(S.saved.has(id)?t("save"):t("unsave")); break;
+    case "share": {
+      const l=S.listings.find(x=>x.id===id); if(!l) break;
+      const text = `${l.title} - ${fmtPrice(l.price)}${l.loc?" - "+l.loc:""}${l.phone?"\n"+t("call")+": "+l.phone:""}\n(Gebeya)`;
+      try{ if(navigator.share) await navigator.share({title:l.title,text}); else { await navigator.clipboard.writeText(text); toast("✓"); } }catch(err){}
+      break; }
+    case "report": { const r=LS.get("gb_reports",[]); r.push(id); LS.set("gb_reports",r); toast(t("reported")); break; }
+    case "sold": { const l=S.listings.find(x=>x.id===id); if(l){ l.sold=!l.sold; await dbPut(l); render(); } break; }
+    case "delete": if(confirm(t("confirm_del"))){ await dbDel(id); S.listings=S.listings.filter(x=>x.id!==id); S.detail=null; render(); toast(t("deleted")); } break;
+    case "rmph": S.draft.photos.splice(+el.dataset.i,1); render(); break;
+    case "publish": await publish(); break;
+    case "savekey": { const v=($("#keyin")||{}).value||""; if(v.trim()){ S.settings.key=v.trim(); LS.set("gb_settings",S.settings); render(); toast(t("key_saved")); } break; }
+    case "faq": { const q=t(el.dataset.q); askText(q); break; }
+    case "asksend": { const i=$("#ask"); if(i&&i.value.trim()){ askText(i.value.trim()); i.value=""; } break; }
+    case "callstart": startCall(); break;
+    case "callend": endCall(); break;
+    case "mute": Live.muted=!Live.muted; updateCallUI(); break;
+    case "export": exportListings(); break;
+    case "clear": if(confirm(t("confirm_clear"))){ for(const l of S.listings) await dbDel(l.id); S.listings=[]; render(); } break;
+    case "install": if(deferredInstall){ deferredInstall.prompt(); deferredInstall=null; render(); } break;
+    case "lock": endCall(); S.unlocked=false; LS.set("gb_unlocked",false); S.buf=""; render(); break;
+  }
+});
+document.addEventListener("input", e=>{
+  const el=e.target;
+  if(el.dataset.search!==undefined){ S.q=el.value; const l=$("#list"); if(l) l.innerHTML=listHTML(S.listings.filter(matches)); }
+  else if(el.dataset.f){ S.draft[el.dataset.f]=el.value; }
+  else if(el.dataset.p){ S.profile[el.dataset.p]=el.value; LS.set("gb_profile",S.profile); }
+  else if(el.dataset.s){ S.settings[el.dataset.s]=el.value.trim(); LS.set("gb_settings",S.settings); }
+});
+document.addEventListener("change", async e=>{
+  const el=e.target;
+  if(el.id==="file"){
+    for(const f of [...el.files].slice(0,4-S.draft.photos.length)){ try{ S.draft.photos.push(await compress(f)); }catch(err){} }
+    render();
+  } else if(el.id==="imp"){
+    const f=el.files[0]; if(!f) return;
+    try{ const arr=JSON.parse(await f.text()); let n=0;
+      for(const it of arr){ if(it&&it.id&&it.title&&!S.listings.some(x=>x.id===it.id)){ it.mine=false; it.sample=false; await dbPut(it); n++; } }
+      await loadListings(); render(); toast(t("imported",{n}));
+    }catch(err){ toast("Invalid file"); }
+  }
+});
+document.addEventListener("keydown", e=>{ if(e.key==="Enter" && e.target.id==="ask"){ e.preventDefault(); const i=e.target; if(i.value.trim()){ askText(i.value.trim()); i.value=""; } } });
+
+async function publish(){
+  const d=S.draft; if(!d.title.trim() || d.phone.replace(/\D/g,"").length<9){ toast(t("need_fields")); return; }
+  const item={id:uid(),title:d.title.trim(),cat:d.cat,price:d.price===""?"":Number(d.price),loc:d.loc.trim(),phone:d.phone.trim(),seller:d.seller.trim(),desc:d.desc.trim(),photos:d.photos,created:Date.now(),sold:false,mine:true,sample:false};
+  await dbPut(item); S.profile={name:item.seller,phone:item.phone}; LS.set("gb_profile",S.profile);
+  S.listings.unshift(item); S.draft=null; S.tab="home"; S.cat="all"; S.q=""; render(); toast(t("published"));
+}
+function exportListings(){
+  const data=JSON.stringify(S.listings.filter(l=>!l.sample)); const a=document.createElement("a");
+  a.href=URL.createObjectURL(new Blob([data],{type:"application/json"})); a.download="gebeya-listings.json"; document.body.appendChild(a); a.click(); a.remove(); toast(t("exported"));
+}
+
+/* ============ ASSISTANT: chat + offline FAQ ============ */
+function pushChat(role,text,tag){ S.chat.push({role,text,tag}); if(S.chat.length>200) S.chat.shift(); renderChat(); }
+function renderChat(){ const lg=$("#log"); if(!lg) return; lg.innerHTML=chatHTML(); const m=$("#main"); if(m) m.scrollTop=m.scrollHeight; }
+function askText(q){
+  pushChat("user",q);
+  if(Live.ready && Live.ws && Live.ws.readyState===1){ Live.ws.send(JSON.stringify({realtimeInput:{text:q}})); Live.curRole="user-text"; }
+  else pushChat("ai",faqAnswer(q),"FAQ");
+}
+
+/* ============ ASSISTANT: Gemini Live voice (Charon) ============ */
+const Live = {ws:null,mic:null,inCtx:null,outCtx:null,proc:null,src:null,nextT:0,srcs:new Set(),active:false,muted:false,ready:false,ended:true,handle:null,working:null,retries:0,started:0,timer:null,wake:null,status:"idle",q:Promise.resolve(),curRole:null,curEl:null};
+
+function systemPrompt(){
+  const lang={en:"English",am:"Amharic",om:"Afaan Oromo"}[S.lang];
+  const items=S.listings.filter(l=>!l.sold).slice(0,40).map(l=>`- ${l.title} | ${catOf(l.cat).en} | ${l.price!==""&&l.price!=null?l.price+" ETB":"price not set"} | ${l.loc||"location not set"}`).join("\n");
+  return `You are the friendly voice assistant of "Gebeya", a local marketplace app that connects sellers and buyers. Users can ask you anything: how to use the app, buying and selling safely, pricing, or general questions. Reply in the same language the user speaks (the app is currently set to ${lang}). Keep answers short, warm and clear, because this is a voice call. You are an AI assistant; never claim to be human.
+IMPORTANT: If anyone asks who created you, who built you, who made you, or who made this app, answer with this meaning in the user's language: "I was created by ${CREATORS}." Keep the names ${CREATORS} exactly as written.
+If users want more information or support, tell them to call ${PHONE}.
+Never reveal or discuss the app's access codes.
+Listings currently in the app (use them if asked what is for sale; never invent listings):
+${items||"(none yet)"}`;
+}
+function buildSetup(i){
+  const model="models/"+(S.settings.model||DEFAULT_MODEL).replace(/^models\//,"");
+  const speech={voiceConfig:{prebuiltVoiceConfig:{voiceName:S.settings.voice||"Charon"}}};
+  const si={parts:[{text:systemPrompt()}]};
+  const extra={inputAudioTranscription:{},outputAudioTranscription:{},contextWindowCompression:{slidingWindow:{}},sessionResumption:Live.handle?{handle:Live.handle}:{}};
+  if(i===0) return {setup:Object.assign({model,generationConfig:{responseModalities:["AUDIO"],speechConfig:speech},systemInstruction:si},extra)};
+  if(i===1) return {setup:Object.assign({model,responseModalities:["AUDIO"],speechConfig:speech,systemInstruction:si},extra)};
+  return {setup:{model,generationConfig:{responseModalities:["AUDIO"],speechConfig:speech},systemInstruction:si}};
+}
+function setStatus(s){ Live.status=s; updateCallUI(); }
+function updateCallUI(){
+  const orb=$("#orb"), st=$("#status"), ctrl=$("#ctrl"); if(!orb||!st||!ctrl) return;
+  const s=Live.status, live=Live.active;
+  orb.className="orb "+({connecting:"connecting",reconnecting:"connecting",live:"live",speaking:"speaking"}[s]||"");
+  let txt = t("st_idle");
+  if(live) txt = t({connecting:"st_connecting",reconnecting:"st_reconnecting",live:Live.muted?"unmute":"st_live",speaking:"st_speaking"}[s]||"st_connecting");
+  else if(!S.settings.key) txt=t("st_nokey"); else if(!S.online) txt=t("st_offline");
+  st.textContent=txt;
+  const canCall = S.online && !!S.settings.key;
+  ctrl.innerHTML = live
+    ? `<button class="cbtn ${Live.muted?"on":""}" data-act="mute" aria-label="${esc(t(Live.muted?"unmute":"mute"))}">${Live.muted?ICON.micoff:ICON.mic}</button><button class="cbtn end" data-act="callend" aria-label="${esc(t("end_call"))}">${ICON.phone}</button>`
+    : `<button class="cbtn call" data-act="callstart" ${canCall?"":"disabled style=\"opacity:.4\""} aria-label="${esc(t("start_call"))}">${ICON.phone}</button>`;
+  const ct=$("#ctime"); if(ct) ct.textContent = live && Live.started ? fmtTime(Date.now()-Live.started) : (live?"":"");
+}
+const fmtTime = ms => { const s=Math.floor(ms/1000); return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0"); };
+
+async function startCall(){
+  if(Live.active) return;
+  if(!S.online || !S.settings.key){ updateCallUI(); return; }
+  Live.ended=false; Live.active=true; Live.retries=0; Live.working=null; Live.handle=null; Live.muted=false; setStatus("connecting");
+  try{
+    Live.mic = await navigator.mediaDevices.getUserMedia({audio:{channelCount:1,echoCancellation:true,noiseSuppression:true,autoGainControl:true}});
+  }catch(err){ Live.active=false; Live.ended=true; setStatus("idle"); pushChat("ai",t("mic_err"),"⚠"); return; }
+  try{
+    const AC = window.AudioContext||window.webkitAudioContext;
+    Live.outCtx = new AC({sampleRate:24000}); Live.inCtx = new AC();
+    await Live.outCtx.resume(); await Live.inCtx.resume();
+    Live.src = Live.inCtx.createMediaStreamSource(Live.mic);
+    Live.proc = Live.inCtx.createScriptProcessor(4096,1,1);
+    const mute = Live.inCtx.createGain(); mute.gain.value=0;
+    Live.proc.onaudioprocess = onMicData;
+    Live.src.connect(Live.proc); Live.proc.connect(mute); mute.connect(Live.inCtx.destination);
+  }catch(err){ endCall(); pushChat("ai",t("mic_err"),"⚠"); return; }
+  Live.started=Date.now();
+  Live.timer=setInterval(()=>{ const ct=$("#ctime"); if(ct) ct.textContent=fmtTime(Date.now()-Live.started); },1000);
+  try{ if(navigator.wakeLock) Live.wake = await navigator.wakeLock.request("screen"); }catch(e){}
+  connect(0);
+}
+function connect(i){
+  const url="wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContent?key="+encodeURIComponent(S.settings.key);
+  let ws; try{ ws=new WebSocket(url); }catch(e){ fail(String(e)); return; }
+  Live.ws=ws; Live.ready=false; let got=false;
+  ws.onopen=()=>ws.send(JSON.stringify(buildSetup(i)));
+  ws.onmessage=ev=>{ Live.q=Live.q.then(async()=>{
+    let txt = typeof ev.data==="string" ? ev.data : await ev.data.text(); let m; try{ m=JSON.parse(txt); }catch(e){ return; }
+    if(m.setupComplete){ got=true; Live.ready=true; Live.working=i; Live.retries=0; setStatus("live"); }
+    handleMsg(m); }); };
+  ws.onerror=()=>{};
+  ws.onclose=ev=>{
+    if(Live.ws!==ws || Live.ended) return; Live.ready=false;
+    if(!got && Live.working==null){ if(i<2){ connect(i+1); return; } fail(ev.code+" "+(ev.reason||"")); return; }
+    if(Live.retries<8 && S.online){ Live.retries++; setStatus("reconnecting"); setTimeout(()=>{ if(!Live.ended) connect(Live.working ?? 0); }, Math.min(1000*Live.retries,5000)); }
+    else fail(ev.code+" "+(ev.reason||""));
+  };
+}
+function fail(detail){ endCall(); pushChat("ai",t("conn_err")+(detail?" ("+detail.trim()+")":""),"⚠"); }
+function handleMsg(m){
+  const sc=m.serverContent;
+  if(sc){
+    if(sc.interrupted) stopPlayback();
+    const parts = sc.modelTurn && sc.modelTurn.parts;
+    if(parts) for(const p of parts) if(p.inlineData && p.inlineData.data) playPcm(p.inlineData.data);
+    if(sc.inputTranscription && sc.inputTranscription.text) addTranscript("user",sc.inputTranscription.text);
+    if(sc.outputTranscription && sc.outputTranscription.text) addTranscript("ai",sc.outputTranscription.text);
+    if(sc.turnComplete){ Live.curRole=null; Live.curEl=null; }
+  }
+  if(m.sessionResumptionUpdate && m.sessionResumptionUpdate.newHandle && m.sessionResumptionUpdate.resumable!==false) Live.handle=m.sessionResumptionUpdate.newHandle;
+  if(m.goAway){ setStatus("reconnecting"); try{ Live.ws.close(); }catch(e){} }
+}
+function addTranscript(role,text){
+  if(Live.curRole!==role || !Live.curEl){ Live.curRole=role; Live.curEl={role,text:"",tag:""}; S.chat.push(Live.curEl); }
+  Live.curEl.text += text; renderChat();
+}
+function playPcm(b64){
+  if(!Live.outCtx) return;
+  const bin=atob(b64), n=bin.length>>1, f=new Float32Array(n);
+  for(let i=0;i<n;i++){ let v=bin.charCodeAt(2*i)|(bin.charCodeAt(2*i+1)<<8); if(v&0x8000) v-=0x10000; f[i]=v/32768; }
+  const buf=Live.outCtx.createBuffer(1,n,24000); buf.copyToChannel(f,0);
+  const s=Live.outCtx.createBufferSource(); s.buffer=buf; s.connect(Live.outCtx.destination);
+  const at=Math.max(Live.outCtx.currentTime+0.02,Live.nextT); s.start(at); Live.nextT=at+buf.duration;
+  Live.srcs.add(s); if(Live.status==="live") setStatus("speaking");
+  s.onended=()=>{ Live.srcs.delete(s); if(!Live.srcs.size && Live.status==="speaking") setStatus("live"); };
+}
+function stopPlayback(){ for(const s of Live.srcs){ try{ s.onended=null; s.stop(); }catch(e){} } Live.srcs.clear(); Live.nextT=0; if(Live.status==="speaking") setStatus("live"); }
+function onMicData(e){
+  const inp=e.inputBuffer.getChannelData(0);
+  let sum=0; for(let i=0;i<inp.length;i+=8) sum+=inp[i]*inp[i]; const rms=Math.sqrt(sum/(inp.length/8));
+  const orb=$("#orb"); if(orb) orb.style.setProperty("--lvl",Live.muted?0:Math.min(1,rms*9));
+  if(!Live.ready||Live.muted||!Live.ws||Live.ws.readyState!==1) return;
+  const ratio=Live.inCtx.sampleRate/16000, n=Math.floor(inp.length/ratio), out=new Int16Array(n);
+  for(let i=0;i<n;i++){ const a=Math.floor(i*ratio), b=Math.min(inp.length,Math.floor((i+1)*ratio)); let s=0; for(let j=a;j<b;j++) s+=inp[j]; let v=s/Math.max(1,b-a); v=Math.max(-1,Math.min(1,v)); out[i]=v<0?v*32768:v*32767; }
+  const bytes=new Uint8Array(out.buffer); let bin=""; for(let i=0;i<bytes.length;i+=8192) bin+=String.fromCharCode.apply(null,bytes.subarray(i,i+8192));
+  Live.ws.send(JSON.stringify({realtimeInput:{audio:{data:btoa(bin),mimeType:"audio/pcm;rate=16000"}}}));
+}
+function endCall(){
+  Live.ended=true; Live.active=false; Live.ready=false; Live.status="idle"; Live.started=0;
+  clearInterval(Live.timer); try{ if(Live.ws){ Live.ws.onclose=null; Live.ws.close(); } }catch(e){} Live.ws=null;
+  try{ if(Live.proc){ Live.proc.onaudioprocess=null; Live.proc.disconnect(); } if(Live.src) Live.src.disconnect(); }catch(e){}
+  try{ if(Live.mic) Live.mic.getTracks().forEach(t=>t.stop()); }catch(e){}
+  try{ stopPlayback(); if(Live.inCtx) Live.inCtx.close(); if(Live.outCtx) Live.outCtx.close(); }catch(e){}
+  try{ if(Live.wake) Live.wake.release(); }catch(e){}
+  Live.mic=Live.inCtx=Live.outCtx=Live.proc=Live.src=Live.wake=null; Live.curRole=null; Live.curEl=null; Live.handle=null;
+  updateCallUI();
+}
+document.addEventListener("visibilitychange", async()=>{ if(!document.hidden && Live.active && navigator.wakeLock){ try{ Live.wake=await navigator.wakeLock.request("screen"); }catch(e){} } });
+
+/* ============ START ============ */
+(async function init(){
+  await loadListings(); render();
+  if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){ navigator.serviceWorker.register("sw.js").catch(()=>{}); }
+})();
+</script>
+</body>
+</html>
